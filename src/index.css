@@ -1,0 +1,54 @@
+main {
+    text-align: center;
+    max-width: 400px;
+    min-height: 500px;
+    border: 9px solid black;
+    border-radius: 5%;
+    background: #2b2424ed;
+    margin: auto;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    width: 100%;
+}
+
+.screen {
+    display: inline-block;
+    min-height: 50px;
+    width: 85%;
+    margin: 10px 0 0 0;
+    border-radius: 5px;
+    background: #fffffff7;
+}
+
+.row div {
+    display: inline-block;
+    min-width: 65px;
+    min-height: 65px;
+    background: white;
+    border: 1px solid black;
+    border-radius: 2px;
+    text-align: center;
+    line-height: 65px;
+    margin: 17px 2px;
+    cursor: pointer;
+}
+
+.row div:active {
+    background: #858484;
+    color: white;
+}
+
+.numpad {
+    display: inline-block;
+    min-height: 400px;
+    width: 85%;
+    background: #5f5f5ff7;
+    margin-top: 20px;
+    border-radius: 5%;
+}
+
+#btn0{
+    min-width: 40%;
+}
