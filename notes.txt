@@ -1,5 +1,5 @@
-Left off parsing data for operators. Make sure cant be multiple.
-Break up code into separate files ie. Validation etc.
+Left off parsing data for operators. Make sure cant be multiple. READ LINE 16 in parse.js
+
 
 Need to parse for multiple operators etc before adding to state
 
