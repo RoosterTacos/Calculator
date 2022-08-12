@@ -1,0 +1,10 @@
+Left of line 29, parsing data.
+
+Need to parse for multiple operators etc before adding to state
+
+// On "=" parse string for operator (+-*/) and split up text
+// into 3 parts A Operator B
+
+// Send to proper function for calculation
+
+// Return answer to screen

@@ -1,19 +1,15 @@
 
 
 
-//  On state change from strokes/presses add values to screen
+//  On state change from strokes/presses add values to state
 let oldState = '';
 let state = '';
 
 // Check for state change
-const hasStateChanged = () => {
+export const hasStateChanged = () => {
     if(oldState !== newState){
         return true;
     }
-}
-
-const handleStateChange = () => {
-    console.log('State: ',state);
 }
 
 setInterval(() => {
@@ -21,30 +17,34 @@ setInterval(() => {
     oldState = state;
 }, 100);
 
+// Change / Handle state 
+export const handleStateChange = () => {
+    console.log('State: ',state);
+}
 
+export const addToState = (data) => {
+    state += data;
+}
 
-
-
-// On "=" parse string for operator (+-*/) and split up text
-// into 3 parts A Operator B
-
-// Send to proper function for calculation
-
-// Return answer to screen
-
-
-
+// Parse / Check State
+export const validateState = (event) => {
+    if(state.length <= 13){
+        addToState(event.target.innerText);
+    }
+}
 
 // Get all button presses
 window.addEventListener('DOMContentLoaded', () => {
     const numpad = document.getElementsByClassName('numpad')[0];
 
-    numpad.addEventListener('click', (e) => {
-        e.stopPropagation();
-        e.preventDefault();
-        if(e.target.className === 'btn'){
-            state = e.target.innerText;
+    numpad.addEventListener('click', (event) => {
+        event.stopPropagation();
+        event.preventDefault();
+        
+        if(event.target.className === 'btn'){
+            validateState(event, state);
         }
+        
     })
 })
 
