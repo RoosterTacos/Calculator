@@ -1,4 +1,5 @@
-Left of line 29, parsing data.
+Left off parsing data for operators. Make sure cant be multiple.
+Break up code into separate files ie. Validation etc.
 
 Need to parse for multiple operators etc before adding to state
 

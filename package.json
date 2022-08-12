@@ -9,8 +9,8 @@
   "scripts": {
     "test": "jest",
     "distribute": "babel ./src -d ./dist && npm run moveHTML && npm run moveCSS",
-    "moveHTML": "Powershell.exe -Command cp ./src/index.html ./dist/index.html",
-    "moveCSS": "Powershell.exe -Command cp ./src/index.css ./dist/index.css"
+    "moveHTML": "cp ./src/index.html ./dist/index.html",
+    "moveCSS": "cp ./src/index.css ./dist/index.css"
     
   }
 }

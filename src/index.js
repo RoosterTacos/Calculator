@@ -1,36 +1,64 @@
-
-
-
 //  On state change from strokes/presses add values to state
-let oldState = '';
-let state = '';
+let oldState = {
+    data: ''
+}
+
+let state = {
+    data: '',
+    hasOperator: false
+};
 
 // Check for state change
 export const hasStateChanged = () => {
-    if(oldState !== newState){
+    if(oldState.data !== state.data){
         return true;
     }
 }
 
+// Begin listener for state change
 setInterval(() => {
     if(hasStateChanged) handleStateChange();
-    oldState = state;
+    oldState.data = state.data;
 }, 100);
 
 // Change / Handle state 
 export const handleStateChange = () => {
-    console.log('State: ',state);
+    console.log('State: ',state.data);
 }
 
-export const addToState = (data) => {
-    state += data;
+export const addToState = (data, state) => {
+    state.data += data;
 }
 
 // Parse / Check State
-export const validateState = (event) => {
-    if(state.length <= 13){
-        addToState(event.target.innerText);
+// Check / Set State Operator
+export const checkForOperator = (state) => {
+    const operator = state.data.match(/\-|\*|\+|\//ig);
+
+    if((operator) && operator.length > 0){
+        return true;
+    } else {
+        return false;
     }
+    return state;
+}
+
+export const flagOperator = (state, bool) => {
+    if(bool){
+        state.hasOperator = true;
+    } else {
+        state.hasOperator = false;
+    }
+}
+
+export const validateState = (event, state) => {
+    if(state.data.length <= 13){
+        addToState(event.target.innerText, state);
+    }
+
+    // Check for operator
+    let operatorCheckedState = checkForOperator(state);
+    console.log(operatorCheckedState)
 }
 
 // Get all button presses
