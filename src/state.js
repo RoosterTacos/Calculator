@@ -19,9 +19,13 @@ export const hasStateChanged = () => {
 
 // Change / Handle state 
 export const handleStateChange = () => {
-    console.log('State: ',stateObj.data);
+    console.log('State: ',stateObj);
 }
 
 export const addToState = (data) => {
     stateObj.data += data;
+}
+
+export const replaceStateData = (newStateData) => {
+    stateObj.data = newStateData;
 }
