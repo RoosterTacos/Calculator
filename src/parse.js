@@ -6,9 +6,6 @@ import * as state from './state.js';
 
 export const validateState = (event) => {
     console.log('parsing')
-    if(stateObj.data.length <= 13){
-        addToState(event.target.innerText);
-    }
 
     // Check for operator
     let operatorCheckedState = checkForOperator(stateObj);
@@ -17,6 +14,11 @@ export const validateState = (event) => {
     if(operatorCheckedState) flagOperator(stateObj, true);
     
     console.log(operatorCheckedState)
+
+    if(stateObj.data.length <= 13){
+        addToState(event.target.innerText);
+    }
+
 }
 
 export const checkForOperator = (stateObj) => {
